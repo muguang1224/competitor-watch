@@ -1,0 +1,31 @@
+name: competitor-watch
+
+# Example: run weekly, snapshot the configured public sources, and commit the
+# new snapshot + brief back to the repo so the next run can diff against it.
+#
+# Edit sources.json first (or point --config at your own file).
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'   # every Monday 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Snapshot + diff public sources
+        run: python3 scripts/watch.py --config sources.json --state .cw-state --out brief.md
+
+      - name: Commit the snapshot and brief
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f .cw-state brief.md
+          git diff --staged --quiet || git commit -m "chore: competitor snapshot $(date -u +%Y-%m-%d)"
+          git push

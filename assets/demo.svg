@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-label="competitor-watch terminal demo">
+  <rect width="1280" height="440" rx="14" fill="#0b0f14"/>
+  <rect width="1280" height="440" rx="14" fill="none" stroke="#30363d"/>
+  <line x1="0" y1="42" x2="1280" y2="42" stroke="#30363d"/>
+  <circle cx="26" cy="21" r="7" fill="#ff5f56"/>
+  <circle cx="50" cy="21" r="7" fill="#ffbd2e"/>
+  <circle cx="74" cy="21" r="7" fill="#27c93f"/>
+  <text x="640" y="27" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="14" fill="#8b949e">competitor-watch</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace" font-size="16">
+    <text x="34" y="80" fill="#7ee787">$</text>
+    <text x="52" y="80" fill="#c9d1d9">python3 scripts/watch.py --config sources.json --state .cw-state --out brief.md</text>
+    <text x="34" y="106" fill="#7ee787">2 changed / 4 sources -&gt; brief.md</text>
+
+    <text x="34" y="146" fill="#f0f6fc" font-weight="700">## Ollama — NEW ITEMS</text>
+    <text x="34" y="172" fill="#c9d1d9">- </text>
+    <text x="58" y="172" fill="#f0f6fc" font-weight="700">v0.5.0</text>
+    <text x="126" y="172" fill="#8b949e">(2026-10-13) — https://github.com/ollama/ollama/releases/tag/v0.5.0</text>
+    <text x="34" y="196" fill="#c9d1d9">- </text>
+    <text x="58" y="196" fill="#f0f6fc" font-weight="700">v0.4.9</text>
+    <text x="126" y="196" fill="#8b949e">(2026-10-11) — https://github.com/ollama/ollama/releases/tag/v0.4.9</text>
+
+    <text x="34" y="236" fill="#f0f6fc" font-weight="700">## Vendor pricing page — CHANGED</text>
+    <text x="34" y="262" fill="#8b949e">```diff</text>
+    <text x="34" y="286" fill="#f85149">-Starter plan: 10k requests / month</text>
+    <text x="34" y="310" fill="#3fb950">+Starter plan: 25k requests / month · new Team tier at $49</text>
+    <text x="34" y="334" fill="#8b949e">```</text>
+
+    <text x="34" y="376" fill="#8b949e">Raw changes only — you write the brief.</text>
+    <text x="34" y="400" fill="#c9d1d9">"They quietly tripled the Starter quota and added a Team tier."</text>
+  </g>
+</svg>

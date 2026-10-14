@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" role="img" aria-label="competitor-watch — track what competitors actually shipped, from public sources">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="55%" stop-color="#0f1a15"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="glow2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2ea043" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#2ea043" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="300" rx="16" fill="url(#bg2)"/>
+  <rect width="1280" height="300" rx="16" fill="none" stroke="#30363d"/>
+  <rect width="640" height="300" rx="16" fill="url(#glow2)"/>
+
+  <!-- radar / watch glyph -->
+  <circle cx="120" cy="150" r="58" fill="none" stroke="#2ea043" stroke-width="3" stroke-opacity="0.35"/>
+  <circle cx="120" cy="150" r="36" fill="none" stroke="#3fb950" stroke-width="3" stroke-opacity="0.6"/>
+  <circle cx="120" cy="150" r="14" fill="#3fb950"/>
+  <path d="M120 150 L168 112" stroke="#3fb950" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="163" cy="116" r="7" fill="#7ee787"/>
+
+  <text x="222" y="138" font-family="ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+        font-size="54" font-weight="700" fill="#f0f6fc" letter-spacing="-1">competitor-watch</text>
+  <text x="225" y="180" font-family="ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+        font-size="23" fill="#8b949e">Track what competitors actually shipped — from public sources</text>
+
+  <g font-family="ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15">
+    <rect x="224" y="212" width="150" height="36" rx="18" fill="#2ea043" fill-opacity="0.16" stroke="#2ea043" stroke-opacity="0.55"/>
+    <text x="299" y="236" text-anchor="middle" fill="#7ee787">0 dependencies</text>
+
+    <rect x="388" y="212" width="150" height="36" rx="18" fill="#ffffff" fill-opacity="0.04" stroke="#30363d"/>
+    <text x="463" y="236" text-anchor="middle" fill="#c9d1d9">4 source types</text>
+
+    <rect x="552" y="212" width="158" height="36" rx="18" fill="#ffffff" fill-opacity="0.04" stroke="#30363d"/>
+    <text x="631" y="236" text-anchor="middle" fill="#c9d1d9">snapshot + diff</text>
+
+    <rect x="724" y="212" width="188" height="36" rx="18" fill="#ffffff" fill-opacity="0.04" stroke="#30363d"/>
+    <text x="818" y="236" text-anchor="middle" fill="#c9d1d9">public sources only</text>
+  </g>
+
+  <text x="1248" y="52" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="16" fill="#484f58">stdlib only</text>
+</svg>

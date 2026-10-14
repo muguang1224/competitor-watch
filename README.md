@@ -1,10 +1,19 @@
 # competitor-watch
 
+<img src="assets/banner.svg" alt="competitor-watch — track what competitors actually shipped, from public sources" width="880">
+
+[![tests](https://img.shields.io/badge/tests-11%20passing-brightgreen)](#tests)
+[![python](https://img.shields.io/badge/python-3.8%2B-blue)](#)
+[![dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](#)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 **An Agent Skill for tracking what your competitors actually shipped — from public sources only.**
 
 Point it at the public pages a company already publishes for humans (release feeds, changelogs, pricing tables, status endpoints). It snapshots them, tells you exactly what changed since last run, and hands you the raw material for a feature brief. No accounts, no API keys, no scraping private app backends — just the standard library and public URLs.
 
 > This is a [Claude / Agent Skill](https://claude.com/docs): a `SKILL.md` file plus helper scripts that an AI agent can load and run. Drop the folder into your skills directory and ask "what has competitor X shipped this week?"
+
+<img src="assets/demo.svg" alt="competitor-watch terminal demo — a diff brief of new releases and a pricing change" width="820">
 
 ## Why
 
@@ -40,13 +49,30 @@ The report is markdown: per source, a status (`NEW ITEMS` / `CHANGED` / `UNCHANG
 
 `competitor-watch` only reads **public, login-free** sources. Reverse-engineering an app's private backend, using a session cookie, or aggregating gated data is out of scope by design — see `SKILL.md` → *Guardrails*.
 
+## Run it on a schedule
+
+The repo ships `.github/workflows/watch.yml`: it runs weekly, snapshots the sources in `sources.json`, and commits the new snapshot + brief back so the next run can diff against it. Edit `sources.json` (or point `--config` at your own file), enable Actions, done.
+
+## Tests
+
+```bash
+python3 -m unittest discover -s tests      # zero-dependency
+# or:  pytest tests/
+```
+
+11 tests covering fetch/fingerprint, HTML text extraction, RSS/JSON sources, the diff state machine (baseline / new items / changed / unchanged), and an end-to-end run. Everything runs offline — sources are local files over `file://` URLs.
+
 ## Repo layout
 
 ```
 SKILL.md                       # the skill: when to use, how, guardrails
 scripts/watch.py               # fetch / snapshot / diff engine (stdlib only)
-examples/sources.example.json  # ready-to-edit config
+sources.json                   # example source list
+examples/sources.example.json  # config with all four source types
 references/brief-template.md   # structure for the brief you write afterwards
+assets/                        # banner + demo (SVG)
+tests/test_watch.py            # unittest suite (offline)
+.github/workflows/watch.yml    # weekly scheduled run
 ```
 
 ## 中文简介
