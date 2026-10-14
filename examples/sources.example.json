@@ -1,0 +1,32 @@
+{
+  "sources": [
+    {
+      "name": "Anthropic SDK (Python)",
+      "type": "github_releases",
+      "repo": "anthropics/anthropic-sdk-python",
+      "notes": "watch release cadence + changelog titles"
+    },
+    {
+      "name": "Ollama",
+      "type": "github_releases",
+      "repo": "ollama/ollama"
+    },
+    {
+      "name": "Some vendor changelog",
+      "type": "page",
+      "url": "https://example.com/changelog",
+      "notes": "public page; we hash the visible text and diff it"
+    },
+    {
+      "name": "Some vendor blog",
+      "type": "rss",
+      "url": "https://example.com/feed.xml"
+    },
+    {
+      "name": "Public status endpoint",
+      "type": "json",
+      "url": "https://example.com/api/public/status",
+      "notes": "no-auth JSON only"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+# state / snapshots
+.cw-state
+.cw-state.json
+*.state
+
+# reports
+brief.md
+/reports/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
